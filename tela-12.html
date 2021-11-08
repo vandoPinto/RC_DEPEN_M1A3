@@ -3,7 +3,6 @@
         list-style-type: none;
     }
 </style>
-
 <div style="height: 72px; width: 100%; background-color: #FAC900; ">
     <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
     <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 50px;" src="recursos/imgs/SI_H1.png">
@@ -16,20 +15,14 @@
     <p style="color: #004D73; font-weight: bold; font-size: 10px; margin-left: 65px;"><strong>Clique nas sanfonas e veja
             mais a respeito das
             modalidades de repasse de recursos financeiros.</strong></p>
-
-
     <img src="recursos/imgs/SI_13_B01.png" style="margin-top: -10px; width: 633.95px; height: 65px; cursor: pointer;"
-        class="btn" id="botao_1">
+        class="btn animate__animated animate__backInRight" id="botao_1">
     <img src="recursos/imgs/SI_13_B02.png" style="margin-top: 10px; width: 633.95px; height: 65px; cursor: pointer;"
-        class="btn" id="botao_2">
+        class="btn animate__animated animate__backInLeft" id="botao_2">
     <img src="recursos/imgs/SI_13_B03.png" style="margin-top: 10px; width: 633.95px; height: 65px; cursor: pointer;"
-        class="btn" id="botao_1">
+        class="btn animate__animated animate__backInRight" id="botao_1">
     <img src="recursos/imgs/SI_13_B04.png" style="margin-top: 10px; width: 633.95px; height: 65px; cursor: pointer;"
-        class="btn" id="botao_2">
-
-
-
-
+        class="btn animate__animated animate__backInLeft" id="botao_2">
     <div>
         <div id="janela_1"
             style="position: relative;width: 563px;height: 90px;background-color: rgba(255, 214, 64, 0.9);border-radius: 10px;flex-wrap: nowrap;margin-left: 40px;margin-top: -300px;cursor: pointer;">
@@ -39,7 +32,6 @@
                 projeto/atividade ou evento de interesse recíproco, desde que haja cooperação.
             </p>
         </div>
-
         <div id="janela_2"
             style="position: relative;width: 563px;height: 90px;background-color: rgba(255, 214, 64, 0.9);border-radius: 10px;flex-wrap: nowrap;margin-left: 40px;margin-top: -244px;cursor: pointer;">
             <h1 style="padding: 10px 0px 0px 10px;">Contratos de repasse</h1>
@@ -48,7 +40,6 @@
                 destinados à execução de obras de engenharia previstas nos programas de governo.
             </p>
         </div>
-
         <div id="janela_3"
             style="position: relative;width: 563px;height: 160px;background-color: rgba(255, 214, 64, 0.9);border-radius: 10px;flex-wrap: nowrap;margin-left: 40px;margin-top: -217px;cursor: pointer;">
             <h1 style="padding: 10px 0px 0px 10px;">Termos de fomento</h1>
@@ -63,7 +54,6 @@
                 Proteção e Assistência aos Condenados (APACs) para o aparelhamento dos espaços de saúde
                 dessas instituições.</p>
         </div>
-
         <div id="janela_4"
             style="position: relative;width: 563px;height: 90px;background-color: rgba(255, 214, 64, 0.9);border-radius: 10px;flex-wrap: nowrap;margin-left: 40px;margin-top: -115px;cursor: pointer;">
             <h1 style="padding: 10px 0px 0px 10px;">Fundo a fundo</h1>
@@ -73,17 +63,13 @@
                 financiamento, desde que haja um projeto específico a executar.
             </p>
         </div>
-
     </div>
-
 </div>
-
 <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
     <img style="height: 22.65px; width:256.8px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png">
     <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;"
         src="recursos/imgs/SI_F2.png">
 </footer>
-
 <script>
     $(() => {
         let janelas = $(document).find('[id^=janela]').css('cursor', 'pointer').on("click", apagarJanelas);
