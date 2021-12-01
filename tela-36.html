@@ -3,20 +3,130 @@
         margin-bottom: 12px;
         margin-left: 18px;
     }
+
+    .questao:hover {
+        background-color: #FAC900;
+        cursor: pointer;
+    }
+
+    .marcado {
+        background-color: #FAC900;
+    }
+
+    .submeter {
+        margin: 1em auto;
+        font-weight: bold;
+        color: #ffffff;
+        border-radius: 3px;
+        background-color: #FAC900;
+        border: solid 0 transparent;
+        outline: none;
+        box-shadow: 0 .1em rgba(0, 0, 0, .5);
+        padding: .5em;
+        display: block;
+        width: 50%;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .feed {
+        position: relative;
+        width: 270px;
+        height: 125px;
+        background-color: rgba(255, 214, 64, 1);
+        border-radius: 10px;
+        flex-wrap: nowrap;
+        cursor: pointer;
+    }
 </style>
 <div style="height: 72px; width: 100%; background-color: #FAC900; ">
     <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
-    <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 50px;" src="recursos/imgs/SI_H1.png">
+    <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;" src="recursos/imgs/SI_H1.png">
     <img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
     <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
 </div>
-<div class="coluna-esquerda largura-1_3 animate__animated animate__flipInX">
-    <img style="height: 219.4px; width: 241.85px; margin-top: 80.65px; margin-left: 35px;" src="recursos/imgs/SI_46.png">
+<div class="coluna-esquerda largura-1_3">
+    <img class="animate__animated animate__flipInX"
+        style="height: 219.4px; width: 241.85px; margin-top: 80.65px; margin-left: 35px;" src="recursos/imgs/SI_46.png">
 </div>
-<div class="coluna-direita largura-2_1" style="width: 500px; height: 500px; margin-top: 60px;margin-right: 75px;">
-    <iframe src="quiz.html"></iframe>
+<div class="coluna-direita largura-2_1" style="width: 500px; height: 500px; margin-top: 80px;margin-right: 75px;">
+    <!-- <iframe src="quiz.html"></iframe> -->
+    <h1>Questão 1</h1>
+    <p><strong>O sistema prisional faz parte de um processo dinâmico que envolve pessoas com
+    culturas, valores, conhecimentos, vivências e experiências semelhantes.</strong>
+    </p>
+
+    <p class="questao" id="opc_e">a) Verdadeiro</p>
+    <p class="questao" id="opc_c">b) Falso</p>
+    <div class="submeter">Submeter</div>
+
+    <div style="margin-top: -130px; width: 500px; height: 150px;" class="feed" id="feedCerto">
+        <img style="height: 70px; margin-top: -48px; margin-left: 30px;margin-bottom: 15px;"
+            src="recursos/imgs/SI_CE.png">
+        <h2 style="margin-left: 30px;">Resposta correta</h2>
+        <p style="margin-left: 30px; width: 450px;">Você acertou! As pessoas privadas de liberdade, servidores e gestores
+        constituem um público heterogêneo que faz parte do sistema prisional.
+        Cada um possui sua história e chega ao sistema com suas particularidades.</p>
+    </div>
+
+    <div style="margin-top: -130px; width: 500px; height: 150px;" class="feed" id="feedErrado">
+        <img style="height: 70px; margin-top: -48px; margin-left: 30px;margin-bottom: 15px;"
+            src="recursos/imgs/SI_CE.png">
+        <h2 style="margin-left: 30px;">Resposta incorreta</h2>
+        <p style="margin-left: 30px; width: 450px;">A afirmativa é falsa. As pessoas privadas de liberdade, servidores e gestores
+        constituem um público heterogêneo que faz parte do sistema prisional.
+        Cada um possui sua história e chega ao sistema com suas particularidades.</p>
+    </div>
 </div>
 <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
     <img style="height: 22.65px; width:256.8px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png">
-    <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;" src="recursos/imgs/SI_F2.png">
+    <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;"
+        src="recursos/imgs/SI_F2.png">
 </footer>
+
+<script>
+    $(() => {
+        pontos = 0;
+        let mostrarSub = true;
+        let resposta = '';
+        let feedCerto = $(document).find('[id^=feedCerto]').hide();
+        let feedErrado = $(document).find('[id^=feedErrado]').hide();
+        let submeter = $(document).find('[class=submeter]').hide();
+
+        $(feedCerto).on('click', apagarFeeds);
+        $(feedErrado).on('click', apagarFeeds);
+
+        function apagarFeeds() {
+            feedCerto.fadeOut();
+            feedErrado.fadeOut();
+        }
+        function desmarcarTudo() {
+            let questao = $(document).find('[id^=opc]').map((index, sel) => {
+                $(sel).removeClass("marcado");
+            })
+        }
+
+        let questao = $(document).find('[id^=opc]').map((index, sel) => {
+            $(sel).click(() => {
+                console.log(sel.id);
+                resposta = sel.id;
+                if (mostrarSub) {
+                    submeter.fadeIn();
+                }
+                desmarcarTudo();
+                $(sel).addClass("marcado");
+            })
+        })
+
+        $(submeter).on('click', () => {
+            if (resposta.split("_")[1] == "c") {
+                $(feedCerto).fadeIn();
+                pontos += 1;
+                mostrarSub = false;
+                submeter.hide();
+            } else {
+                $(feedErrado).fadeIn();
+            }
+        })
+    })
+</script>

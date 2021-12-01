@@ -3,47 +3,133 @@
         margin-bottom: 12px;
         margin-left: 18px;
     }
+
+    .questao:hover {
+        background-color: #FAC900;
+        cursor: pointer;
+    }
+
+    .marcado {
+        background-color: #FAC900;
+    }
+
+    .submeter {
+        margin: 1em auto;
+        font-weight: bold;
+        color: #ffffff;
+        border-radius: 3px;
+        background-color: #FAC900;
+        border: solid 0 transparent;
+        outline: none;
+        box-shadow: 0 .1em rgba(0, 0, 0, .5);
+        padding: .5em;
+        display: block;
+        width: 50%;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .feed {
+        position: relative;
+        width: 270px;
+        height: 125px;
+        background-color: rgba(255, 214, 64, 1);
+        border-radius: 10px;
+        flex-wrap: nowrap;
+        cursor: pointer;
+    }
 </style>
 <div style="height: 72px; width: 100%; background-color: #FAC900; ">
     <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
-    <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 50px;" src="recursos/imgs/SI_H1.png">
+    <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;" src="recursos/imgs/SI_H1.png">
     <img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
     <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
 </div>
-<div class="coluna-esquerda largura-2_1 ">
-    <div style="width: 480px;margin-top: 90px;margin-left: 50px;">
-        <p>
-            • NASCIMENTO, L. G.; BANDEIRA, M. M. B. Saúde penitenciária, promoção de saúde e
-            redução de danos do encarceramento: desafios para a prática do psicólogo no
-            sistema prisional.<strong> Psicol. Cienc. Prof.</strong>, Brasília, v. 38, n. spe2, pp. 102-116, 2018.
-            Disponível
-            em: <a href="https://www.scielo.br/j/pcp/a/rzBgK7y7GJzqQy98JxLPsGP/abstract/?lang=pt"
-                target="_blank">https://www.scielo.br/j/pcp/a/rzBgK7y7GJzqQy98JxLPsGP/abstract/?lang=pt</a>.
-            Acesso em: 4 ago. 2021.
-        </p>
-        <p>
-            • SERRA, A. E. G.; LIMA, R. C. R. O. Promoção da saúde para pessoas no regime
-            semiaberto do sistema penitenciário: relato de experiência.<strong> Saúde debate,</strong> Rio de
-            Janeiro, v. 43, n. 123, pP. 1270-1281, out. 2019. Disponível em:
-            <a href="http://www.scielo.br/scielo.php?script=sci_arttext&pid=S0103-11042019000401270&lng=en&nrm=iso"
-                target="_blank">http://www.scielo.br/scielo.php?script=sci_arttext&pid=S0103-11042019000401270&lng=<br>en&nrm=iso</a>.
-            Acesso em: 4 ago. 2021.
-        </p>
-        <p>
-            • SILVA, F. S. A cidadania encarcerada: problemas e desafios para a efetivação do
-            direito à saúde nas prisões. In: COSTA, A. B.; SOUSA JUNIOR, J. G.; DELDUQUE, M. C.;
-            OLIVEIRA, M. S. C.; DALLARI, S. G. (orgs.).<strong> O Direito achado na rua:</strong> introdução crítica
-            ao
-            direito à saúde. Brasília: CEAD; UnB. pp. 241-252.
-        </p>
-    </div>
+<div class="coluna-esquerda largura-1_3">
+    <img class="animate__animated animate__flipInX"
+        style="height: 219.4px; width: 241.85px; margin-top: 80.65px; margin-left: 35px;" src="recursos/imgs/SI_46.png">
 </div>
-<div class="coluna-direita largura-1_3 animate__animated animate__flipInX">
-    <img style="height: 219.4px; width: 241.85px; margin-top: 80.65px; margin-right: 37px;"
-        src="recursos/imgs/SI_46.png">
+<div class="coluna-direita largura-2_1" style="width: 500px; height: 500px; margin-top: 80px;margin-right: 75px;">
+    <!-- <iframe src="quiz.html"></iframe> -->
+    <h1>Questão 3</h1>
+    <p><strong>Os desafios na atenção à saúde no sistema prisional são inúmeros. Diante disso, as
+            ações e os serviços de saúde devem ser direcionados para:</strong>
+    </p>
+    <p class="questao" id="opc_e">a) Somente as PPL, pois elas são as que mais sofrem pelo ambiente insalubre.</p>
+    <p class="questao" id="opc_c">b) PPL, agentes penitenciários, servidores da saúde e da reabilitação e gestores.</p>
+    <p class="questao" id="opc_e">c) Os servidores da saúde, pois eles não podem adoecer.</p>
+    <p class="questao" id="opc_e">d) Os servidores da segurança, pois sem eles o ambiente fica inseguro e vulnerável.
+    </p>
+    <p class="questao" id="opc_e">e) Os gestores dos estabelecimentos penais.</p>
+    <div class="submeter">Submeter</div>
+    <div style="margin-top: -130px; width: 500px; height: 150px;" class="feed" id="feedCerto">
+        <img style="height: 70px; margin-top: -48px; margin-left: 30px;margin-bottom: 15px;"
+            src="recursos/imgs/SI_CE.png">
+        <h2 style="margin-left: 30px;">Resposta correta</h2>
+        <p style="margin-left: 30px; width: 450px;">Muito bem! As ações devem ser direcionadas às PPL e a todos os
+            servidores
+            que estão expostos ao estresse e ao risco de transmissão de doença no
+            ambiente prisional.</p>
+    </div>
+    <div style="margin-top: -130px; width: 500px; height: 150px;" class="feed" id="feedErrado">
+        <img style="height: 70px; margin-top: -48px; margin-left: 30px;margin-bottom: 15px;"
+            src="recursos/imgs/SI_CE.png">
+        <h2 style="margin-left: 30px;">Resposta incorreta</h2>
+        <p style="margin-left: 30px; width: 450px;">Na verdade, a alternativa correta é a letra “b”. As ações devem ser
+            direcionadas às PPL e a todos os servidores que estão expostos ao
+            estresse e ao risco de transmissão de doença no ambiente prisional.</p>
+    </div>
 </div>
 <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
     <img style="height: 22.65px; width:256.8px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png">
     <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;"
         src="recursos/imgs/SI_F2.png">
 </footer>
+
+<script>
+    $(() => {
+        let resposta = '';
+        let mostrarSub = true;
+        let feedCerto = $(document).find('[id^=feedCerto]').hide();
+        let feedErrado = $(document).find('[id^=feedErrado]').hide();
+        let submeter = $(document).find('[class=submeter]').hide();
+
+        $(feedCerto).on('click', apagarFeeds);
+        $(feedErrado).on('click', apagarFeeds);
+
+        function apagarFeeds() {
+            feedCerto.fadeOut();
+            feedErrado.fadeOut();
+        }
+
+        function desmarcarTudo() {
+            let questao = $(document).find('[id^=opc]').map((index, sel) => {
+                $(sel).removeClass("marcado");
+            })
+        }
+
+        let questao = $(document).find('[id^=opc]').map((index, sel) => {
+            $(sel).click(() => {
+                console.log(sel.id);
+                resposta = sel.id;
+                if (mostrarSub) {
+                    submeter.fadeIn();
+                }
+                desmarcarTudo();
+                $(sel).addClass("marcado");
+            })
+        })
+
+        $(submeter).on('click', () => {
+            console.log("clicou " + resposta.split("_")[1]);
+            if (resposta.split("_")[1] == "c") {
+                $(feedCerto).fadeIn();
+                pontos += 1;
+                mostrarSub = false;
+                submeter.hide();
+            } else {
+                $(feedErrado).fadeIn();
+            }
+        })
+    })
+</script>
